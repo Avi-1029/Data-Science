@@ -58,4 +58,17 @@ print(np.random.permutation(sofia))
 print(np.random.randint(1,11,7)) #start, end, number of values
 print(np.random.randint(-7, 9 , (3,4))) #start,end,rowsandcolumns
 
+print(hi)
+
+#reshaping an array (changing the rows and columns)
+
+hi2 = hi.reshape((2,6)) #Total number of items in the original array have to be equal to the total number of items in the reshaped array
+
+print(hi2)
+
+#sorting (arranging items in increasing or decreasing order)
+print(hello)
+hello2 = np.sort(hello)
+print(hello2)
+
 
