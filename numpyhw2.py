@@ -9,7 +9,7 @@ if(eq == "Linear"):
     ans = a*x + b
     print("so, (", a, "x", x ,") +" ,b ,"=", ans)
 
-if(eq == "Quadratic"):
+elif(eq == "Quadratic"):
     a2 = int(input("Okay, enter a value for a: "))
     b2 = int(input("Okay, enter a value for b: "))
     c2 = int(input("Okay, enter a value for c: "))
