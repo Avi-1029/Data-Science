@@ -1,7 +1,7 @@
 import pandas as pd
 
-Bob = {"Animals:" : ["Lion" ,"Tiger", "Giraffe", "Kangaroo", "Polar Bear"] , "Birds:" : ["Eagle" , "Crow", "Pigeon", "Peacock", "Dove"]}
-Bobby = pd.DataFrame(Bob)
+#Bob = {"Animals:" : ["Lion" ,"Tiger", "Giraffe", "Kangaroo", "Polar Bear"] , "Birds:" : ["Eagle" , "Crow", "Pigeon", "Peacock", "Dove"]}
+#Bobby = pd.DataFrame(Bob)
 #print(Bobby)
 
 #Reading data from CSV
@@ -32,3 +32,37 @@ print(titanic.info())
 
 #Statistical summary of data set
 print(titanic.describe())
+
+#Extracting values of multiple columns:
+print(titanic[["Fare", "Name", "Age"]])
+
+#Filtering Rows:
+John = titanic[titanic["Age"]>35]
+print(John)
+print(John["Fare"].mean())
+
+Rebecca = titanic[titanic["Age"]<=35]
+print(Rebecca["Fare"].mean())
+
+#Multiple functions (use or with | and and with &)
+Denise = titanic[(titanic["Age"]>=18)&(titanic["Pclass"]==1)]
+Robert = titanic[(titanic["Age"]>=18)&(titanic["Pclass"]==2)]
+Thomas = titanic[(titanic["Age"]>=18)&(titanic["Pclass"]==3)]
+
+print(Denise["Fare"].mean())
+print(Robert["Fare"].mean())
+print(Thomas["Fare"].mean())
+
+#Index based slicing:
+print(titanic.iloc[0:30:2 , 0:7:2 ]) #[Start row: End row: Step , Start column: End column: Step]
+
+#Conditional Slicing:
+print(titanic.loc[titanic["Age"]>=35 , ["Name","Sex"]])
+
+#Changing values for a dataframe:
+titanic.iloc[0:2 , 2:3] = ["Mr. Bob Marley" , "Mrs. Bobby Whinehouse Jr."]
+print(titanic.head())
+
+#Saving CSV:
+
+titanic.to_csv("ronaldojr.csv")
