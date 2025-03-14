@@ -64,5 +64,33 @@ titanic.iloc[0:2 , 2:3] = ["Mr. Bob Marley" , "Mrs. Bobby Whinehouse Jr."]
 print(titanic.head())
 
 #Saving CSV:
-
 titanic.to_csv("ronaldojr.csv")
+
+#Adding a new column to the dataframe
+titanic["Discounted fare"] = titanic["Fare"] - titanic["Fare"]*0.75
+print(titanic.head())
+
+#Seeing the column names:
+print(titanic.columns)
+
+#Renaming the columns:
+titanic.rename(columns = {"Sex":"Gender" , "Name":"Identity"}, inplace = True)
+print(titanic.columns)
+print(titanic.head())
+
+#Sorting a dataframe
+print(titanic.sort_values(by = "Discounted fare" , ascending = False))
+
+#replacing values in a dataframe:
+titanic["Gender"].replace({"female":"Male" , "male":"Female"}, inplace = True)
+print(titanic)
+
+#Grouping:
+soup = titanic.groupby("Pclass")
+print(soup)
+print(soup.max())
+
+print(soup["Age"].mean())
+
+cereal = titanic.groupby(["Pclass", "Gender"])
+print(cereal.max())
