@@ -59,6 +59,27 @@ y = [2,1,7,6,12]
 plt.scatter(x,y,marker = "*", s = 20, color = "darkred")
 plt.show()
 
+#Stackplot:
+days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday" , "Saturday", "Sunday"]
+Studying = [2, 3, 2, 0, 1, 4, 5,]
+Reading = [1, 2, 1, 3, 1, 2, 2]
+Listening_to_music = [3, 2, 4, 2, 3, 1, 1]
+Singing = [2, 3, 1, 4, 5, 2, 1]
+plt.stackplot(days, Studying, Reading, Listening_to_music, Singing, labels = ["Studying", "Reading","Listening To Music","Singing"],colors = ["lightblue","lightpink","lightgreen","lightyellow"])
+plt.legend()
+plt.show()
+
+#Subplots:
+plt.subplot(2, 3, 1)
+plt.stackplot(days, Studying, Reading, Listening_to_music, Singing, labels = ["Studying", "Reading","Listening To Music","Singing"],colors = ["lightblue","lightpink","lightgreen","lightyellow"])
+plt.subplot(2, 3, 2)
+plt.pie(slices, labels = labels,autopct='%1.0f%%',startangle = 90, colors = ["lightblue","lightpink","lavender", "lightgreen","lightyellow"], shadow = True)
+plt.subplot(2,3,3)
+plt.scatter(x,y,marker = "*", s = 20, color = "darkred")
+plt.subplot(2,3,4)
+plt.hist(bob, daniel, edgecolor = "darkblue")
+plt.show()
+
 #PieChart:
 slices = [4,5,7,10,11]
 labels = ["bananas","strawberry","dragonfruit","papaya","pear"]
